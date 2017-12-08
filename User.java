@@ -6,9 +6,9 @@ import android.arch.persistence.room.PrimaryKey;
 /**
  * Created by kaylee on 2017/12/7.
  */
-@Entity
+@Entity(tableName = "user")
 public class User {
-    @PrimaryKey int id;
+    @PrimaryKey(autoGenerate = true)int id;
     String name;
     int age;
 
@@ -36,16 +36,10 @@ public class User {
         this.age = age;
     }
 
-    public User(int id, String name, int age) {
-        this.id = id;
+    public User( String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    public User(User user) {
-        this.id = user.id;
-        this.name = user.name;
-        this.age = user.age;
-    }
 
 }

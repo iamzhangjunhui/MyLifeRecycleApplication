@@ -22,7 +22,7 @@ public interface UserDao  {
     public List<User> findAllUser();
 
     @Query("SELECT * FROM User WHERE id = :userId")
-    public User findUser(int id);
+    public User findUser(int userId);
 
     @Update(onConflict = OnConflictStrategy.IGNORE)
     public void update(User user);

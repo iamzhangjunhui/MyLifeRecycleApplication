@@ -9,5 +9,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        User userEntity = new User("zhang",23);
+        AppDataBase.getInstance(getApplicationContext()).userDao().insertUser(userEntity);
+//                "  AppDatabase.getDatabase(getApplicationContext()).getUserEntityDao().addUser(userEntity);
+
     }
 }
